@@ -10,5 +10,11 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: 'Carter One', cursive;
+    display: flex;
+    align-items: center;
+    h1 {
+      font-size: larger;
+      margin: 0 5px;
+    }
   }
 }
