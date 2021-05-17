@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://127.0.0.1:3000/',
+  baseUrl: 'https://shop-bridge-back.herokuapp.com/',
   restUrl: 'api/'
 };
