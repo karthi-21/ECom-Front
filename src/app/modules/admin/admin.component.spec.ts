@@ -1,10 +1,10 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AdminComponent } from './admin.component';
 import { ToastrModule } from 'ngx-toastr';
 import { ProductService } from 'src/app/providers/product.service';
 import { Product } from 'src/app/models/product.model';
-import { async, of } from 'rxjs';
+import { async, Observable, of, throwError } from 'rxjs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { By } from '@angular/platform-browser';
@@ -61,9 +61,26 @@ describe('AdminComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should call and get products on init', () => {
+    const spy = spyOn(productServiceStub, 'getAllProducts').and.returnValue(of(products));
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(component.products.length).toBeGreaterThan(0);
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it('should be false after error while loading data', () => {
+    const spy = spyOn(productServiceStub, 'getAllProducts').and.returnValue(throwError('err'));
+    fixture.detectChanges();
+    fixture.whenStable()
+      .then(() =>{
+          expect(spy).toThrowError();
+       });
+    });
 
   it('should return products list', () => {
     fixture.detectChanges();
@@ -145,6 +162,26 @@ describe('AdminComponent', () => {
       expect(component.product.name).toEqual('');
     });
   });
+
+  it('should call onChangeImg() on change of choose file button', fakeAsync(() => {
+    fixture.detectChanges();
+    spyOn(component, 'onChangeImg');
+    let btn = fixture.debugElement.query(By.css('.new-img-upload'));
+    btn.triggerEventHandler('change', null);
+    tick();
+    fixture.detectChanges();
+    expect(component.onChangeImg).toHaveBeenCalled();
+  }));
+
+  it('should call onChangeEditImg() on change of choose file button', fakeAsync(() => {
+    fixture.detectChanges();
+    spyOn(component, 'onChangeEditImg');
+    let btn = fixture.debugElement.query(By.css('.edit-img-upload'));
+    btn.triggerEventHandler('change', null);
+    tick();
+    fixture.detectChanges();
+    expect(component.onChangeEditImg).toHaveBeenCalled();
+  }));
 
   it('should has correct rows and columns', () => {
     fixture.detectChanges();

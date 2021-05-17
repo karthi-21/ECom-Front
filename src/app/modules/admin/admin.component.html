@@ -62,7 +62,7 @@
             <span class="input-group-text">%</span>
           </div>
           <div class="input-group mb-3">
-            <input type="file" class="form-control" id="uploadNewProduct" (change)="onChangeImg($event)">
+            <input type="file" class="form-control new-img-upload" id="uploadNewProduct" (change)="onChangeImg($event)">
           </div>
           <div class="mb-3">
             <p><sup class="text-danger">*</sup>All fields are mandatory.</p>
@@ -104,7 +104,7 @@
             <img [src]="editProduct.img" [alt]="editProduct.name" width="30px">
           </div>
           <div class="input-group mb-3">
-            <input type="file" class="form-control" id="uploadForEditProduct" (change)="onChangeEditImg($event)">
+            <input type="file" class="form-control edit-img-upload" id="uploadForEditProduct" (change)="onChangeEditImg($event)">
           </div>
           <div class="mb-3">
             <p><sup class="text-danger">*</sup>All fields are mandatory.</p>

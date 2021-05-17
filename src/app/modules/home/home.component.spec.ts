@@ -62,4 +62,12 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
     expect(component.products.length).toBeGreaterThanOrEqual(0);
   });
+
+  it('should call and get products on init', () => {
+    const spy = spyOn(productServiceStub, 'getAllProducts').and.returnValue(of(products));
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(component.products.length).toBeGreaterThan(0);
+    expect(spy).toHaveBeenCalled();
+  });
 });
