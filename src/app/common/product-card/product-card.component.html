@@ -1,0 +1,11 @@
+<div class="card shadow-sm p-3 mb-5 bg-body rounded" *ngIf="product">
+  <div class="card-img-container" *ngIf="product.img">
+    <img src="{{ product.img }}" class="card-img-top" alt="{{ product.name }}">
+  </div>
+  <div class="card-body">
+    <p class="card-text text-primary" *ngIf="product.name">{{ product.name }}</p>
+    <p class="card-text text-secondary" *ngIf="product.price">{{ product.price | currency:'INR' }}
+      <span class="badge bg-success" *ngIf="product.discount">{{ product.discount }}% OFF</span>
+    </p>
+  </div>
+</div>

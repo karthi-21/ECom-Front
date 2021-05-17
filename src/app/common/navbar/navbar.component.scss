@@ -1,0 +1,14 @@
+
+.navbar {
+  background-color: #f6eae2;
+
+  .navbar-brand {
+    background: #F3933D;
+    background: -webkit-linear-gradient(to right, #F3933D 0%, #ED3833 20%, #8C89F7 100%);
+    background: -moz-linear-gradient(to right, #F3933D 0%, #ED3833 20%, #8C89F7 100%);
+    background: linear-gradient(to right, #F3933D 0%, #ED3833 20%, #8C89F7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Carter One', cursive;
+  }
+}
