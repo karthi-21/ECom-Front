@@ -1,14 +1,43 @@
-# EcomFront
+# [ShopBridge](https://shop-bridge.netlify.app/home)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0. It is an ecommerce modal where just created to do some CRUD operations.
+
+This is the url for live example [https://shop-bridge.netlify.app](https://shop-bridge.netlify.app). It is deployed in netlify with continous deployment from github integration.
+
+## Home Page
+
+![Home page](./docs/imgs/home.png)
+
+## Admin Page
+
+![Home page](./docs/imgs/admin.png)
+
+## Add New Product Modal
+
+![Home page](./docs/imgs/add.png)
+
+## Edit Product Modal
+
+![Home page](./docs/imgs/edit.png)
+
+## Delete Button
+
+![Home page](./docs/imgs/delete.png)
+
+## After Deletion
+
+![Home page](./docs/imgs/deleted.png)
+
+
+# Backend hosted on [HEROKU](https://dashboard.heroku.com/)
+
+The base url of the hosted backend server api is [https://shop-bridge-back.herokuapp.com/api](https://shop-bridge-back.herokuapp.com/api). Code for backend is in github repo [Shop Bridge Backend](https://github.com/karthi-21/ECom-back) and deployed using continous deployemnt.
+
+![Home page](./docs/imgs/backend.png)
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -17,12 +46,3 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# ECom-Front
